@@ -15,6 +15,13 @@ typedef struct {
 }Livro;
 
 void emprestarLivro(Livro *livro, Usuario *usuario) {
+    if (strcmp(livro->status, "disponivel") == 0) {
+        strcpy(livro->status, "emprestado");
+        livro->usuario = *usuario;
+        printf("Livro emprestado com sucesso!\n");
+    } else {
+        printf("O livro ja esta emprestado!\n");
+    }
 }
 
 int main() {
