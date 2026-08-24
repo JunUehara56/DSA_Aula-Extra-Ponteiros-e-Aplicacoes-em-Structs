@@ -24,6 +24,16 @@ void emprestarLivro(Livro *livro, Usuario *usuario) {
     }
 }
 
+void devolverLivro(Livro *livro) {
+    if (strcmp(livro->status, "emprestado") == 0) {
+        strcpy(livro->status, "disponivel");
+        printf("Livro devolvido com sucesso!\n");
+    } else {
+        printf("O livro ja esta disponivel!\n");
+    }
+}
+
+
 int main() {
     Livro livro1;
     Usuario usuario1;
@@ -39,6 +49,8 @@ int main() {
     printf("Codigo: %d\n", livro1.codigo);
     printf("Status: %s\n", livro1.status);
     emprestarLivro(&livro1, &usuario1);
+    printf("\n===== DEVOLUCAO =====\n");
+    devolverLivro(&livro1);
+    printf("Status: %s\n", livro1.status);
     return 0;
 }
-
