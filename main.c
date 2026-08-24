@@ -14,6 +14,9 @@ typedef struct {
     Usuario usuario;
 }Livro;
 
+void emprestarLivro(Livro *livro, Usuario *usuario) {
+}
+
 int main() {
     Livro livro1;
     Usuario usuario1;
@@ -28,6 +31,7 @@ int main() {
     printf("Autor: %s\n", livro1.autor);
     printf("Codigo: %d\n", livro1.codigo);
     printf("Status: %s\n", livro1.status);
+    emprestarLivro(&livro1, &usuario1);
     return 0;
 }
 
